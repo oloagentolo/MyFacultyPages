@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag 'bootstrap.css', :media => 'all' %>
+  <%= stylesheet_link_tag 'custom.css', :media => 'all' %>
+
+
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='wrapper'>
+    <%= render 'layouts/header' %>
+
+    <div class='bar'>
+      <% logo = image_tag('UACS.png', :alt => 'UA Computer Science', :class => 'UHCS-logo') %>
+      <%= link_to logo, 'http://www.cs.uh.edu/', class: 'UHCS-path' %>
+      <%= link_to 'Sign in', '#', class: 'signin-path' %>
+    </div>
+  
+    <div class='container-fluid'>
+      <div class='row-fluid'>
+        <%= render 'layouts/navigation' %>
+        <div class='span9'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  
+    <%= render 'layouts/footer' %>
+  </div>
+</body>
+</html>

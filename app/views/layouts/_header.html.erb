@@ -1,0 +1,18 @@
+<header>
+  <div class='container-fluid'>
+    <div class='row-fluid'>
+      <div class='span3 profile_picture'>
+        <% profile_image = image_tag('rails.png', :alt => 'myPhoto', :class => 'img-profile') %>
+        <%= link_to profile_image, root_path %>
+      </div>
+      <div class='banner'>
+        <h1 class='header-text'>John Doe</h1>
+        <h4 class='header-text'>Professor of Computer Science</h4>
+      </div>
+      <div class='logo'>
+        <% uh_logo = image_tag('UA-logo-red.png', :alt => 'UA') %>
+        <%= link_to uh_logo, 'http://www.uh.edu' %>
+      </div>
+    </div>
+  </div>
+</header>

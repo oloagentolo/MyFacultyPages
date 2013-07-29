@@ -6,8 +6,8 @@
         <%= link_to profile_image, root_path %>
       </div>
       <div class='banner'>
-        <h1 class='header-text'>John Doe</h1>
-        <h4 class='header-text'>Professor of Computer Science</h4>
+        <h1 class='header-text'><%= @faculty_member.first_name %> <%= @faculty_member.last_name %></h1>
+        <h4 class='header-text'><%= @faculty_member.position %> of <%= @faculty_member.department %></h4>
       </div>
       <div class='logo'>
         <% uh_logo = image_tag('UA-logo-red.png', :alt => 'UA') %>

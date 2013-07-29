@@ -3,7 +3,7 @@ require 'spec_helper'
 describe FacultyMember do
   before(:each) do
     @attr = { :last_name => 'Last', :first_name => 'First', :position => 'Professor', 
-      :department => 'Computer Science', :university_id => '' }
+      :department => 'Computer Science', :university_id => 123456 }
   end
 
   describe 'instantiation' do

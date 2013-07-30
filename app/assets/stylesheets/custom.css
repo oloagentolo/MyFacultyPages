@@ -89,6 +89,12 @@ footer {
   width: 151px;
 }
 
+.img-index {
+  max-height: 84px;
+  max-width: 84px;
+  
+}
+
 /*
 div#profile_picture {
 	height: 100%;

@@ -23,7 +23,7 @@ header {
 }
 
 .logo-left {
-  
+  text-align: center;
 }
 
 .logo-left img {
@@ -87,6 +87,12 @@ footer {
 
 .img-logo {
   width: 151px;
+}
+
+.img-index {
+  max-height: 100px;
+  max-width: 100px;
+  
 }
 
 /*

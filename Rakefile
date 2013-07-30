@@ -4,3 +4,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 MyFacultyPages::Application.load_tasks
+
+task :test do
+	system('rspec spec/ --color')
+end

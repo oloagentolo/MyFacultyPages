@@ -4,23 +4,27 @@
       "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/faculty_members_controller.rb": [
         1,
         1,
+        null,
         1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
         null,
         null
       ],
       "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/application_controller.rb": [
         1,
-        1,
-        null,
         null,
         null,
         1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
         null
       ],
       "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/faculty_member.rb": [
@@ -29,6 +33,6 @@
         null
       ]
     },
-    "timestamp": 1375155263
+    "timestamp": 1375167266
   }
 }

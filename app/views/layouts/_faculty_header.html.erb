@@ -3,7 +3,7 @@
     <div class='row-fluid'>
       <div class='span3 profile_picture'>
         <% profile_image = image_tag('rails.png', :alt => 'myPhoto', :class => 'img-profile') %>
-        <%= link_to profile_image, root_path %>
+        <%= link_to profile_image, @faculty_member %>
       </div>
       <div class='banner'>
         <h1 class='header-text'>
@@ -14,8 +14,8 @@
         </h4>
       </div>
       <div class='logo-right'>
-        <% uh_logo = image_tag('UA-logo-red.png', :alt => 'UA') %>
-        <%= link_to uh_logo, 'http://www.uh.edu' %>
+        <% ua_logo = image_tag('UA-logo-red.png', :alt => 'UA') %>
+        <%= link_to ua_logo, root_path %>
       </div>
     </div>
   </div>

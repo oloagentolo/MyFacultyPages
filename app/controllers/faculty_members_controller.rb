@@ -2,6 +2,7 @@ class FacultyMembersController < ApplicationController
   before_action :set_faculty_member, only: [:show]
 
   def index
+  	@index_view = true
     @faculty_members = FacultyMember.all
   end
 

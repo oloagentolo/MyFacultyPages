@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FacultyMembersController do
-  
+  render_views  
 
   describe "GET request for 'index'" do
     it 'should be successful' do

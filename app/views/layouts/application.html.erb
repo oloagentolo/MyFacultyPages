@@ -12,10 +12,10 @@
 </head>
 <body>
   <div class='wrapper'>
-    <% if current_page?(root_path) %>
-      <%= render 'layouts/index_header' %>
+    <% if @index_view %>
+      <%= render 'layouts/index_header' %> <!-- Render this header for the professors index page -->
     <% else %>
-      <%= render 'layouts/faculty_header' %>
+      <%= render 'layouts/faculty_header' %>  <!-- Render this header for the individual professor pages -->
     <% end %>
 
     <div class='bar'>
@@ -26,7 +26,7 @@
   
     <div class='container-fluid'>
       <div class='row-fluid'>
-        <% if current_page?(root_path) %>
+        <% if @index_view %>  <!-- Same thing as the headers above: navigation should only be associated with individual professor pages -->
           <%= yield %>
         <% else %>
           <%= render 'layouts/navigation' %>

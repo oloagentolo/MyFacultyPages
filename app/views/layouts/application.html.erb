@@ -12,7 +12,11 @@
 </head>
 <body>
   <div class='wrapper'>
-    <%= render 'layouts/header' %>
+    <% if current_page?(root_path) %>
+      <%= render 'layouts/index_header' %>
+    <% else %>
+      <%= render 'layouts/faculty_header' %>
+    <% end %>
 
     <div class='bar'>
       <% logo = image_tag('UACS.png', :alt => 'UA Computer Science', :class => 'UHCS-logo') %>
@@ -22,10 +26,14 @@
   
     <div class='container-fluid'>
       <div class='row-fluid'>
-        <%= render 'layouts/navigation' %>
-        <div class='span9'>
+        <% if current_page?(root_path) %>
           <%= yield %>
-        </div>
+        <% else %>
+          <%= render 'layouts/navigation' %>
+          <div class='span9'>
+            <%= yield %>
+          </div>
+        <% end %>
       </div>
     </div>
 

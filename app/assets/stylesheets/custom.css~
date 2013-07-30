@@ -23,7 +23,7 @@ header {
 }
 
 .logo-left {
-  text-align: center;
+  
 }
 
 .logo-left img {

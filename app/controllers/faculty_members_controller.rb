@@ -1,8 +1,8 @@
 class FacultyMembersController < ApplicationController
   before_action :set_faculty_member, only: [:show]
+  before_action :set_faculty_view, except: [:index]
 
   def index
-  	@index_view = true
     @faculty_members = FacultyMember.all
   end
 
@@ -14,5 +14,9 @@ class FacultyMembersController < ApplicationController
   
     def set_faculty_member
       @faculty_member = FacultyMember.find(params[:id])
+    end
+
+    def set_faculty_view
+      @faculty_view = true
     end
 end

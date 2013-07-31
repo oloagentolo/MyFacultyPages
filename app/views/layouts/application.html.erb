@@ -12,11 +12,9 @@
 </head>
 <body>
   <div class='wrapper'>
-    <% if @index_view %>
-      <%= render 'layouts/index_header' %> <!-- Render this header for the professors index page -->
-    <% else %>
-      <%= render 'layouts/faculty_header' %>  <!-- Render this header for the individual professor pages -->
-    <% end %>
+
+    <% header = @faculty_view ? 'faculty_header' : 'index_header' %>
+    <%= render "layouts/#{header}" %>
 
     <div class='bar'>
       <% logo = image_tag('UACS.png', :alt => 'UA Computer Science', :class => 'UHCS-logo') %>
@@ -26,14 +24,10 @@
   
     <div class='container-fluid'>
       <div class='row-fluid'>
-        <% if @index_view %>  <!-- Same thing as the headers above: navigation should only be associated with individual professor pages -->
+        <%= render 'layouts/navigation' if @faculty_member %>
+        <div class="<%= 'span9' if @faculty_view %>">
           <%= yield %>
-        <% else %>
-          <%= render 'layouts/navigation' %>
-          <div class='span9'>
-            <%= yield %>
-          </div>
-        <% end %>
+        </div>
       </div>
     </div>
 

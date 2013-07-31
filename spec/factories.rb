@@ -19,5 +19,6 @@ FactoryGirl.define do
     c.term           'Fall'
     c.year           2013
     c.summary        'This course introduces students to computer science'
+    c.association    :faculty_member
   end
 end

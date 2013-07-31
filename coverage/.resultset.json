@@ -1,41 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/faculty_members_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        null,
-        1,
-        4,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null
-      ],
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
       "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/course.rb": [
         1,
         1,
@@ -51,6 +16,6 @@
         null
       ]
     },
-    "timestamp": 1375286859
+    "timestamp": 1375288581
   }
 }

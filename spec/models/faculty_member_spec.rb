@@ -39,11 +39,16 @@ describe FacultyMember do
   
   describe 'course associations' do
     before(:each) do
-      @course = FactoryGirl.create(:course)
+      @course = FactoryGirl.create(:course, :faculty_member => @faculty)
     end
 
     it 'should have a courses attribute' do
       @faculty.should respond_to(:courses)
+    end
+
+    it 'should destroy associated courses upon faculty member deletion' do
+      @faculty.destroy
+      Course.find_by_id(@course.id).should be_nil
     end
   end
 end

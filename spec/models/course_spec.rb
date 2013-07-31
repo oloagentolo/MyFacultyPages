@@ -46,5 +46,10 @@ describe Course do
     it 'should have a faculty member attribute' do
       @course.should respond_to(:faculty_member)
     end
+
+    it 'should have the right associated faculty member' do
+      @course.faculty_member_id.should == @faculty.id
+      @course.faculty_member.should == @faculty
+    end
   end
 end

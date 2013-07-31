@@ -1,5 +1,5 @@
 class FacultyMembersController < ApplicationController
-  before_action :set_faculty_member, only: [:show]
+  before_action :set_faculty_member, except: [:index]
   before_action :set_faculty_view, except: [:index]
 
   def index
@@ -8,6 +8,10 @@ class FacultyMembersController < ApplicationController
 
   def show
     @title = "#{@faculty_member.first_name} #{@faculty_member.last_name}"
+  end
+
+  def courses
+    @title = "Courses taught by #{@faculty_member.first_name} #{@faculty_member.last_name}"
   end
 
   private

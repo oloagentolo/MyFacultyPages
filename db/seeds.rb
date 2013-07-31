@@ -8,4 +8,4 @@
 
 
 FacultyMember.create(first_name: 'John', last_name: 'Doe', position: 'Professor',
-  department: 'Computer Science', university_id: 123456)
+  department: 'Computer Science', university_id: 123456, email: 'johndoe@uastalia.edu')

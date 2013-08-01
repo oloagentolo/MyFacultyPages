@@ -51,4 +51,19 @@ describe FacultyMember do
       Course.find_by_id(@course.id).should be_nil
     end
   end
+
+  describe 'research associations' do
+    before(:each) do
+      @research = FactoryGirl.create(:research, :faculty_member => @faculty)
+    end
+
+    it 'should have a researches attribute' do
+      @faculty.should respond_to(:researches)
+    end
+
+    it 'should destroy associated researches upon faculty member deletion' do
+      @faculty.destroy
+      Research.find_by_id(@research.id).should be_nil
+    end
+  end
 end

@@ -21,4 +21,12 @@ FactoryGirl.define do
     c.summary        'This course introduces students to computer science'
     c.association    :faculty_member
   end
+
+  factory :research do |r|
+    r.topic          'Sample Research Topic'
+    r.start_date     Date.new(1997, 1, 1)
+    r.end_date       Date.today
+    r.summary        'This is a sample research summary.'
+    r.association    :faculty_member
+  end
 end

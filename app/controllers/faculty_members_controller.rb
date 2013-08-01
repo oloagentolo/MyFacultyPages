@@ -12,6 +12,9 @@ class FacultyMembersController < ApplicationController
 
   def courses
     @title = "Courses taught by #{@faculty_member.first_name} #{@faculty_member.last_name}"
+    @courses = Course.all
+    @years = @courses.uniq.pluck(:year).reverse
+
   end
 
   private

@@ -4,7 +4,7 @@ describe Course do
   before(:each) do
   	@faculty = FactoryGirl.create(:faculty_member)
   	@attr = { :dept_code => 'COSC', :course_no => 1234, :name => 'Intro to foo',
-  	  :term => 'Fall', :year => 2013 }
+  	  :term => 'Fall', :year => 2013, :faculty_member_id => @faculty.id }
   end
 
   describe 'instantiation' do
@@ -31,6 +31,11 @@ describe Course do
     it 'should require a year' do
       no_year_course = Course.new(@attr.merge(:year => nil))
       no_year_course.should_not be_valid
+    end
+
+    it 'should require the ID of the instructor' do
+      no_instructor_course = Course.new(@attr.merge(:faculty_member_id => nil))
+      no_instructor_course.should_not be_valid
     end
 
     it 'should create a new instance given valid attributes' do

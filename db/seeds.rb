@@ -21,3 +21,12 @@ Course.create(dept_code: 'COSC', course_no: 2410, name: 'Logic and Design Fundam
 
 Course.create(dept_code: 'COSC', course_no: 3310, name: 'Software Engineering', term: 'Spring', year: 2015,
   summary: 'Fundamental practices for developing software to industry standards.', faculty_member_id: 1)
+
+Research.create(topic: 'Fundamentals of Artificial Intelligence and its Applications', start_date: Date.new(2007, 6, 1),
+	end_date: Date.today, summary: 'Sample summary for reserach topic goes here.', faculty_member_id: 1)
+
+Research.create(topic: 'Computing Networks', start_date: Date.new(1995, 5, 1), faculty_member_id: 1,
+  end_date: Date.today, summary: 'Another ample summary for reserach topic goes here.')
+
+Research.create(topic: 'Medical Imaging and Robotics', start_date: Date.new(1997, 8, 1), faculty_member_id: 1,
+	end_date: Date.today, summary: 'Yet another sample summary for reserach topic goes here.')

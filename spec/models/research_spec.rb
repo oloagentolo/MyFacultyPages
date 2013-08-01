@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe Research do
   before(:each) do
+    @faculty = FactoryGirl.create(:faculty_member)
     @attr = { :topic => 'Sample Research Topic', :start_date => Date.new(1997, 1, 1), :end_date => Date.today,
-      :summary => 'Sample research topic goes here.' }
+      :summary => 'Sample research topic goes here.', :faculty_member_id => @faculty.id }
   end
 
   describe 'instantiation' do
@@ -20,6 +21,15 @@ describe Research do
     it 'should require a faculty ID reference' do
       no_faculty_reference = Research.new(@attr.merge(:faculty_member_id => nil))
       no_faculty_reference.should_not be_valid
+    end
+
+    it 'should require a starting date' do
+      no_start_date_research = Research.new(@attr.merge(:start_date => nil))
+      no_start_date_research.should_not be_valid
+    end
+
+    it 'should create an instance given valid attributes' do
+      Research.create!(@attr)
     end
   end
 end

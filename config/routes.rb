@@ -5,6 +5,7 @@ MyFacultyPages::Application.routes.draw do
   resources :faculty_members do
     member do
       get 'courses'
+      get 'researches'
     end
   end
 

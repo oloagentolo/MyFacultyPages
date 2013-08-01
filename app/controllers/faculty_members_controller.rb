@@ -14,7 +14,11 @@ class FacultyMembersController < ApplicationController
     @title = "Courses taught by #{@faculty_member.first_name} #{@faculty_member.last_name}"
     @courses = Course.all
     @years = @courses.uniq.pluck(:year).reverse
+  end
 
+  def researches
+    @title = "Research by #{@faculty_member.first_name} #{@faculty_member.last_name}"
+    @researches = Research.all.sort_by { |r| [r.start_date, r.end_date] }.reverse
   end
 
   private

@@ -43,4 +43,21 @@ describe FacultyMembersController do
         :content => "Courses taught by #{@faculty.first_name} #{@faculty.last_name}")
     end
   end
+
+  describe "GET request for 'researches'" do
+    before(:each) do
+      @faculty = FactoryGirl.create(:faculty_member)
+    end
+
+    it 'should be successful' do
+      get :researches, :id => @faculty
+      response.should be_success
+    end
+
+    it 'should have the correct title' do
+      get :researches, :id => @faculty
+      response.should have_selector('title',
+        :content => "Research by #{@faculty.first_name} #{@faculty.last_name}")
+    end
+  end
 end

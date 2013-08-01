@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-07-31T13:55:14-05:00">2013-07-31T13:55:14-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-07-31T22:40:53-05:00">2013-07-31T22:40:53-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>2</b> files in total.
-    <b>6</b> relevant lines. 
-    <span class="green"><b>6</b> lines covered</span> and
+    <b>1</b> files in total.
+    <b>2</b> relevant lines. 
+    <span class="green"><b>2</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,21 +51,11 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#be1157f2907a6b16dc6cdc41762c5b7464e98ae6" class="src_link" title="app/models/course.rb">app/models/course.rb</a></td>
+        <td class="strong"><a href="#eec1826a5fc6539aa492a8ec20a0fa72f9fa9404" class="src_link" title="app/models/research.rb">app/models/research.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
         <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#2d3f8cffbc0fee842c6f3f6eb89fce2114ad8ec2" class="src_link" title="app/models/faculty_member.rb">app/models/faculty_member.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>3</td>
-        <td>3</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -86,13 +76,13 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="be1157f2907a6b16dc6cdc41762c5b7464e98ae6">
+        <div class="source_table" id="eec1826a5fc6539aa492a8ec20a0fa72f9fa9404">
   <div class="header">
-    <h3>app/models/course.rb</h3>
+    <h3>app/models/research.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -103,76 +93,16 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Course &lt; ActiveRecord::Base</code>
+          <code class="ruby">class Research &lt; ActiveRecord::Base</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :dept_code, :course_no, :name, :term, :year, :faculty_member_id</code>
+          <code class="ruby">  validates_presence_of :topic, :summary</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  belongs_to :faculty_member</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="2d3f8cffbc0fee842c6f3f6eb89fce2114ad8ec2">
-  <div class="header">
-    <h3>app/models/faculty_member.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class FacultyMember &lt; ActiveRecord::Base</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates_presence_of :last_name, :first_name, :position, :department, :university_id, :email</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :courses, :dependent =&gt; :destroy</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>

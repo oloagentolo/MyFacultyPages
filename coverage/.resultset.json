@@ -1,21 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/course.rb": [
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/research.rb": [
         1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/faculty_member.rb": [
-        1,
-        1,
-        null,
         1,
         null
       ]
     },
-    "timestamp": 1375296914
+    "timestamp": 1375328453
   }
 }

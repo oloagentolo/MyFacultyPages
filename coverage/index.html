@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-08-01T01:12:52-05:00">2013-08-01T01:12:52-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-08-01T01:43:43-05:00">2013-08-01T01:43:43-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -301,7 +301,7 @@
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">    @researches = Research.all.sort_by { |r| [r.start_date, r.end_date] }.reverse</code>
+          <code class="ruby">    @researches = Research.all.sort_by { |r| r.end_date.blank? ? Date.today : r.end_date }.reverse</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">

@@ -18,7 +18,7 @@ class FacultyMembersController < ApplicationController
 
   def researches
     @title = "Research by #{@faculty_member.first_name} #{@faculty_member.last_name}"
-    @researches = Research.all.sort_by { |r| [r.start_date, r.end_date] }.reverse
+    @researches = Research.all.sort_by { |r| r.end_date.blank? ? Date.today : r.end_date }.reverse
   end
 
   private

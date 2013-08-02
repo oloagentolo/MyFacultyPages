@@ -7,6 +7,7 @@ MyFacultyPages::Application.routes.draw do
       get 'courses'
       get 'researches'
       get 'publications'
+      get 'curriculum_vitae'
     end
   end
 

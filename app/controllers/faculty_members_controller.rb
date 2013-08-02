@@ -27,6 +27,10 @@ class FacultyMembersController < ApplicationController
     @publications = @faculty_member.publications
   end
 
+  def curriculum_vitae
+    @title = "Curriculum Vitae for #{@faculty_member.first_name} #{@faculty_member.last_name}"
+  end
+
   private
   
     def set_faculty_member

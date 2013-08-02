@@ -1,70 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/faculty_members_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null,
-        1,
-        null,
-        1,
-        6,
-        null,
-        null,
-        1,
-        6,
-        null,
-        null
-      ],
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/course.rb": [
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/faculty_member.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/research.rb": [
-        1,
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/publication.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1375339423
+    "timestamp": 1375402831
   }
 }

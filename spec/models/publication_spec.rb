@@ -4,7 +4,7 @@ describe Publication do
   before(:each) do
     @faculty = FactoryGirl.create(:faculty_member)
     @attr = { :title => 'Sample Publication Title', :summary => 'This is a sample summary.',
-      :faculty_member_id => @faculty.id }
+      :faculty_member_id => @faculty.id, :year => 2000 }
   end
 
   describe 'instantiation' do
@@ -21,6 +21,11 @@ describe Publication do
     it 'should require the ID of the instructor' do
       no_author_publication = Publication.new(@attr.merge(:faculty_member_id => nil))
       no_author_publication.should_not be_valid
+    end
+
+    it 'should require the year of publication' do
+      no_year_publication = Publication.new(@attr.merge(:year => nil))
+      no_year_publication.should_not be_valid
     end
 
     it 'should create a new instance given valid attributes' do

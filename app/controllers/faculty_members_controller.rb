@@ -1,3 +1,4 @@
+
 class FacultyMembersController < ApplicationController
   before_action :set_faculty_member, except: [:index]
   before_action :set_faculty_view, except: [:index]
@@ -23,6 +24,7 @@ class FacultyMembersController < ApplicationController
 
   def publications
     @title = "Publications by #{@faculty_member.first_name} #{@faculty_member.last_name}"
+    @publications = @faculty_member.publications
   end
 
   private

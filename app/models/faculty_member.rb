@@ -4,4 +4,5 @@ class FacultyMember < ActiveRecord::Base
   has_many :courses, :dependent => :destroy
   has_many :researches, :dependent => :destroy
   has_many :publications, :dependent => :destroy
+  has_many :degrees, :dependent => :destroy
 end

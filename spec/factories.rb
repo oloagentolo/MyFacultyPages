@@ -36,4 +36,12 @@ FactoryGirl.define do
     p.year           2000
     p.association    :faculty_member
   end
+
+  factory :degree do |d|
+    d.title          'Ph.D'
+    d.field_of_study 'Computer Science'
+    d.institution    'Foo University'
+    d.issue_date     Date.today
+    d.association    :faculty_member
+  end
 end

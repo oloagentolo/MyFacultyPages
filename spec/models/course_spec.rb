@@ -43,7 +43,7 @@ describe Course do
     end
   end
 
-  describe 'faculty member associations' do
+  describe 'with faculty member associations' do
   	before(:each) do
   		@course = @faculty.courses.create(@attr)
   	end

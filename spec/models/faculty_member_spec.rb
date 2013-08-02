@@ -52,7 +52,7 @@ describe FacultyMember do
     end
   end
 
-  describe 'research associations' do
+  describe 'with research associations' do
     before(:each) do
       @research = FactoryGirl.create(:research, :faculty_member => @faculty)
     end
@@ -67,7 +67,7 @@ describe FacultyMember do
     end
   end
 
-  describe 'publication associations' do
+  describe 'with publication associations' do
     before(:each) do
       @publication = FactoryGirl.create(:publication, :faculty_member => @faculty)
     end
@@ -79,6 +79,21 @@ describe FacultyMember do
     it 'should destroy associated publications upon faculty member deletion' do
       @faculty.destroy
       Publication.find_by_id(@publication.id).should be_nil
+    end
+  end
+
+  describe 'with degree associations' do
+    before(:each) do
+      @degree = FactoryGirl.create(:degree, :faculty_member => @faculty)
+    end
+
+    it 'should have a degrees attribute' do
+      @faculty.should respond_to(:degrees)
+    end
+
+    it 'should destroy associated degrees upon faculty member deletion' do
+      @faculty.destroy
+      Degree.find_by_id(@degree.id).should be_nil
     end
   end
 end

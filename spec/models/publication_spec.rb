@@ -33,7 +33,7 @@ describe Publication do
     end
   end
 
-  describe 'faculty member associations' do
+  describe 'with faculty member associations' do
     before(:each) do
       @publication = @faculty.publications.create(@attr)
     end

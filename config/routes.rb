@@ -6,6 +6,7 @@ MyFacultyPages::Application.routes.draw do
     member do
       get 'courses'
       get 'researches'
+      get 'publications'
     end
   end
 

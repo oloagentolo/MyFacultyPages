@@ -14,8 +14,11 @@
         </td>
         <td>
           <strong><%= member.first_name %> <%= member.last_name %></strong><br />
-          Ph. D., The University of Astalia at Malona City<br />
-          Software Development Practices, Software Engineering Principles<br />
+          <%= member.position %><br />
+          <% member.degrees.each do |degree| %>
+            <%= degree.title %> <%= degree.field_of_study %>, <%= degree.institution %><br />
+          <% end %>
+            Software Development Practices, Software Engineering Principles<br />
           <%= link_to 'Website', faculty_member_path(member) %>
         </td>
         <td class='span4'>

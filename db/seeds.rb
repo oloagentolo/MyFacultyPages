@@ -30,3 +30,6 @@ Research.create(topic: 'Computing Networks', start_date: Date.new(1995, 5, 1), f
 
 Research.create(topic: 'Medical Imaging and Robotics', start_date: Date.new(1997, 8, 1), faculty_member_id: 1,
 	end_date: Date.today, summary: 'Yet another sample summary for reserach topic goes here.')
+
+Degree.create(title: 'Ph.D', field_of_study: 'Computer Science', institution: 'University of Astalia',
+	issue_date: Date.new(2003, 6, 1), faculty_member_id: 1)

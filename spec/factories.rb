@@ -29,4 +29,10 @@ FactoryGirl.define do
     r.summary        'This is a sample research summary.'
     r.association    :faculty_member
   end
+
+  factory :publication do |p|
+    p.title          'Sample Publication Title'
+    p.summary        'This publication is a textbook that introduces students to foo'
+    p.association    :faculty_member
+  end
 end

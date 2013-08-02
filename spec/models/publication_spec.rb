@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe Publication do
   before(:each) do
-    @attr = { :title => 'Sample Publication Title', :summary => 'This is a sample summary.' }
+    @faculty = FactoryGirl.create(:faculty_member)
+    @attr = { :title => 'Sample Publication Title', :summary => 'This is a sample summary.',
+      :faculty_member_id => @faculty.id }
   end
 
   describe 'instantiation' do
@@ -14,6 +16,30 @@ describe Publication do
     it 'should require a summary' do
       no_summary_publication = Publication.new(@attr.merge(:summary => ''))
       no_summary_publication.should_not be_valid
+    end
+
+    it 'should require the ID of the instructor' do
+      no_author_publication = Publication.new(@attr.merge(:faculty_member_id => nil))
+      no_author_publication.should_not be_valid
+    end
+
+    it 'should create a new instance given valid attributes' do
+      @faculty.publications.create!(@attr)
+    end
+  end
+
+  describe 'faculty member associations' do
+    before(:each) do
+      @publication = @faculty.publications.create(@attr)
+    end
+
+    it 'should have a faculty member attribute' do 
+      @publication.should respond_to(:faculty_member)
+    end
+
+    it 'should have the right associated faculty member' do
+      @publication.faculty_member_id.should == @faculty.id
+      @publication.faculty_member.should == @faculty
     end
   end
 end

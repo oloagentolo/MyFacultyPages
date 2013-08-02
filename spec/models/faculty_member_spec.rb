@@ -66,4 +66,19 @@ describe FacultyMember do
       Research.find_by_id(@research.id).should be_nil
     end
   end
+
+  describe 'publication associations' do
+    before(:each) do
+      @publication = FactoryGirl.create(:publication, :faculty_member => @faculty)
+    end
+
+    it 'should have a publications attribute' do
+      @faculty.should respond_to(:publications)
+    end
+
+    it 'should destroy associated publications upon faculty member deletion' do
+      @faculty.destroy
+      Publication.find_by_id(@publication.id).should be_nil
+    end
+  end
 end

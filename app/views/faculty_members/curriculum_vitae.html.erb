@@ -1,3 +1,44 @@
 <div class='main_content'>
   <h2>Curriculum Vitae</h2>
+
+  <h4>Education</h4>
+  <ul>
+    <% @degrees.each do |degree| %>
+      <li>
+        <strong>
+          <%= degree.title %> <%= degree.field_of_study %> (<%= degree.issue_date.year %>),
+        </strong>
+        <%= degree.institution %>
+      </li>
+    <% end %>
+  </ul>
+
+  <h4>Publications</h4>
+  <ul>
+    <% @publications.each do |publication| %>
+      <li>
+        <strong>
+        	<%= publication.title %> (<%= publication.year %>)
+        </strong>
+      </li>
+    <% end %>
+  </ul>
+
+  <h4>Research</h4>
+  <ul>
+    <% @researches.each do |research| %>
+      <li>
+        <p>
+        <strong>
+          <%= research.topic %>
+        </strong>
+        <br />
+        <% ending_date = research.end_date.blank? ? 'Present' : "#{research.end_date.month}/#{research.end_date.year}" %>
+
+        <%= research.start_date.month %>/<%= research.start_date.year %> - 
+        <%= ending_date %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
 </div>

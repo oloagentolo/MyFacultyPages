@@ -13,11 +13,13 @@
           <%= image_tag('UA-logo-red.png', :class => 'img-index') %>
         </td>
         <td>
+          <p>
           <strong><%= member.first_name %> <%= member.last_name %></strong><br />
           <%= member.position %><br />
           <% member.degrees.each do |degree| %>
             <%= degree.title %> <%= degree.field_of_study %>, <%= degree.institution %><br />
           <% end %>
+          </p>
             Software Development Practices, Software Engineering Principles<br />
           <%= link_to 'Website', faculty_member_path(member) %>
         </td>

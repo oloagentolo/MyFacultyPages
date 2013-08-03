@@ -1,23 +1,15 @@
 <div class='main_content'>
   <h2>Courses</h2>
-
-  <% @years.each do |year| %>
-    <h3><%= year %></h3>
-    <ul>
-      <% terms = @courses.where(:year => year).uniq.pluck(:term).sort %>
-      <% terms.each do |term| %>
-        <li><h4><%= term %></h4></li>
-        <ul>
-          <% courses = @courses.where(:year => year, :term => term).sort_by { |x| x.course_no } %>
-          <% courses.each do |course| %>
-            <li>
-              <strong><%= course.dept_code %> <%= course.course_no %>: <%= course.name %></strong>
-              <p><%= course.summary %></p>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-    </ul>
+  <% @courses.each do |course| %>
+    <strong>
+      <%= course.dept_code %> <%= course.course_no %>: <%= course.name %>
+    </strong>
+    <p class='dates'>
+      <%= course.term %> <%= course.year %>
+    </p>
+    <p>
+    <%= course.summary %>
+    </p>
+    <hr>
   <% end %>
-
 </div>

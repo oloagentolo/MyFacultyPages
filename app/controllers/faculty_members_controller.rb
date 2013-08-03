@@ -13,8 +13,7 @@ class FacultyMembersController < ApplicationController
 
   def courses
     @title = "Courses taught by #{@faculty_member.first_name} #{@faculty_member.last_name}"
-    @courses = @faculty_member.courses
-    @years = Course.all.where(:faculty_member_id => @faculty_member.id).uniq.pluck(:year).reverse
+    @courses = @faculty_member.courses.sort_by { |c| [c.year, c.term] }.reverse
   end
 
   def researches

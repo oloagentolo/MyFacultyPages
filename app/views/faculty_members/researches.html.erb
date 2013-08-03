@@ -3,9 +3,9 @@
   <% @researches.each do |research| %>
     <strong><%= research.topic %></strong>
     <p class='dates'>
-      <%= research.start_date.month %>/<%= research.start_date.year %>
+      <%= Date::MONTHNAMES[research.start_date.month] %> <%= research.start_date.year %>
        -
-       <% end_timestamp = research.end_date.blank? ? 'Present' : "#{research.end_date.month}/#{research.end_date.year}" %>
+       <% end_timestamp = research.end_date.blank? ? 'Present' : "#{Date::MONTHNAMES[research.end_date.month]} #{research.end_date.year}" %>
        <%= end_timestamp %>
     </p>
     <%= research.summary %>

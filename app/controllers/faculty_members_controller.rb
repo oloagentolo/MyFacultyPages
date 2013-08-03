@@ -35,6 +35,10 @@ class FacultyMembersController < ApplicationController
     @awards = @faculty_member.awards
   end
 
+  def contact_details
+    @title = "Contact Details for #{@faculty_member.first_name} #{@faculty_member.last_name}"
+  end
+
   private
   
     def set_faculty_member

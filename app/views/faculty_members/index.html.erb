@@ -24,8 +24,9 @@
           <%= link_to 'Website', faculty_member_path(member) %>
         </td>
         <td class='span4'>
-          Office: <%= member.office %><br />
-          Phone: (<%= member.phone.to_s[0..2] %>) <%= member.phone.to_s[3..5] %>-<%= member.phone.to_s[6..9] %><br />
+          Office: <%= member.office.blank? ? 'Unavailable' : member.office %><br />
+          Phone: <%= member.phone.blank? ? 'Unavailable' : "(#{member.phone.to_s[0..2]}) #{member.phone.to_s[3..5]}-#{member.phone.to_s[6..9]}" %>
+          <br />
           Email: <%= member.email %>
         </td>
       </tr>

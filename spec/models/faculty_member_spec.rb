@@ -36,6 +36,24 @@ describe FacultyMember do
       @faculty.should_not be_valid
     end
   end
+
+  describe 'phone number validations' do
+    it 'should reject an invalid phone number length' do
+      numbers = [12345, 1234567890123, 1394]
+      numbers.each do |invalid_number|
+        @faculty.phone = invalid_number
+        @faculty.should_not be_valid
+      end
+    end
+
+    it 'should accept a phone number with 10 digits' do
+      numbers = [1234567890, 2819139139]
+      numbers.each do |valid_number|
+        @faculty.phone = valid_number
+        @faculty.should be_valid
+      end
+    end
+  end
   
   describe 'course associations' do
     before(:each) do

@@ -39,3 +39,7 @@ Publication.create(title: 'Introduction to Java Programming', year: 2000, facult
 
 Degree.create(title: 'Ph.D', field_of_study: 'Computer Science', institution: 'University of Astalia',
 	issue_date: Date.new(2003, 6, 1), faculty_member_id: 1)
+
+Employment.create(company: 'Foo Company', position: 'Software Developer', start_date: Date.new(2003, 1, 2),
+  end_date: Date.new(2005, 5, 2), summary: 'Worked as a software developer for the advertising department',
+  faculty_member_id: 1)

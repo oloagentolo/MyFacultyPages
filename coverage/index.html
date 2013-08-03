@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-08-02T02:39:30-05:00">2013-08-02T02:39:30-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-08-02T21:31:36-05:00">2013-08-02T21:31:36-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.16
+         1.14
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>7</b> files in total.
-    <b>44</b> relevant lines. 
-    <span class="green"><b>44</b> lines covered</span> and
+    <b>8</b> files in total.
+    <b>51</b> relevant lines. 
+    <span class="green"><b>51</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,9 +63,9 @@
       <tr>
         <td class="strong"><a href="#8df877cd9af0247e06d97aaad672837ab63b6c5c" class="src_link" title="app/controllers/faculty_members_controller.rb">app/controllers/faculty_members_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>43</td>
-        <td>24</td>
-        <td>24</td>
+        <td>46</td>
+        <td>27</td>
+        <td>27</td>
         <td>0</td>
         <td>2.1</td>
       </tr>
@@ -91,11 +91,21 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#2b40593b1f9a64b9a4d2225fc47a0c3586e07015" class="src_link" title="app/models/employment.rb">app/models/employment.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#2d3f8cffbc0fee842c6f3f6eb89fce2114ad8ec2" class="src_link" title="app/models/faculty_member.rb">app/models/faculty_member.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>6</td>
-        <td>6</td>
+        <td>9</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -189,8 +199,8 @@
     <h3>app/controllers/faculty_members_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
+      <b>27</b> relevant lines. 
+      <span class="green"><b>27</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -384,73 +394,91 @@
           <code class="ruby">    @title = &quot;Curriculum Vitae for #{@faculty_member.first_name} #{@faculty_member.last_name}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="2" data-linenumber="32">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @degrees = @faculty_member.degrees</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="covered" data-hits="2" data-linenumber="33">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    @publications = @faculty_member.publications</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="34">
+          <span class="hits">2</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">    @researches = @faculty_member.researches</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def set_faculty_member</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="37">
-          <span class="hits">10</span>
-          
-          <code class="ruby">      @faculty_member = FacultyMember.find(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    def set_faculty_view</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def set_faculty_member</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="40">
           <span class="hits">10</span>
           
-          <code class="ruby">      @faculty_view = true</code>
+          <code class="ruby">      @faculty_member = FacultyMember.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def set_faculty_view</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="44">
+          <span class="hits">10</span>
+          
+          <code class="ruby">      @faculty_view = true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
@@ -550,13 +578,55 @@
   </pre>
 </div>
       
+        <div class="source_table" id="2b40593b1f9a64b9a4d2225fc47a0c3586e07015">
+  <div class="header">
+    <h3>app/models/employment.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Employment &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	validates_presence_of :company, :position, :start_date, :summary, :faculty_member_id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	belongs_to :faculty_member</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="2d3f8cffbc0fee842c6f3f6eb89fce2114ad8ec2">
   <div class="header">
     <h3>app/models/faculty_member.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -606,7 +676,13 @@
           <code class="ruby">  has_many :degrees, :dependent =&gt; :destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :employments, :dependent =&gt; :destroy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>

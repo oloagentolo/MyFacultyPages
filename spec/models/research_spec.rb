@@ -32,4 +32,19 @@ describe Research do
       Research.create!(@attr)
     end
   end
+
+  describe 'with faculty member associations' do
+    before(:each) do
+      @research = @faculty.researches.create(@attr)
+    end
+
+    it 'should have a faculty member attribute' do
+      @research.should respond_to(:faculty_member)
+    end
+
+    it 'should have the right associated faculty member' do
+      @research.faculty_member_id.should == @faculty.id
+      @research.faculty_member.should == @faculty
+    end
+  end
 end

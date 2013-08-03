@@ -96,4 +96,19 @@ describe FacultyMember do
       Degree.find_by_id(@degree.id).should be_nil
     end
   end
+
+  describe 'with employment associations' do
+    before(:each) do
+      @employment = FactoryGirl.create(:employment, :faculty_member => @faculty)
+    end
+
+    it 'should have an employments attribute' do
+      @faculty.should respond_to(:employments)
+    end
+
+    it 'should destroy the associated employments upon faculty member deletion' do
+      @faculty.destroy
+      Employment.find_by_id(@employment.id).should be_nil
+    end
+  end
 end

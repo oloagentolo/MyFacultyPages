@@ -34,7 +34,7 @@ Research.create(topic: 'Medical Imaging and Robotics', start_date: Date.new(1997
 Publication.create(title: 'Introduction to C++ Programming', year: 2000, faculty_member_id: 1,
 	summary: 'A great textbook for introductory computer science students being introduced to C++.')
 
-Publication.create(title: 'Introduction to Java Programming', year: 2000, faculty_member_id: 1
+Publication.create(title: 'Introduction to Java Programming', year: 2000, faculty_member_id: 1,
 	summary: 'A great textbook for introductory computer science students being introduced to Java.')
 
 Degree.create(title: 'Ph.D', field_of_study: 'Computer Science', institution: 'University of Astalia',

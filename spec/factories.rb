@@ -44,4 +44,13 @@ FactoryGirl.define do
     d.issue_date     Date.today
     d.association    :faculty_member
   end
+
+  factory :employment do |e|
+    e.company        'Foo Company'
+    e.position       'Foo developer'
+    e.start_date     Date.new(2000, 1, 1)
+    e.end_date       Date.today
+    e.summary        'Worked as a foo developer for the company'
+    e.association    :faculty_member
+  end
 end

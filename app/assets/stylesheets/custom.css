@@ -91,10 +91,22 @@ footer {
 
 .img-index {
   max-height: 84px;
-  max-width: 84px;
-  
+  max-width: 84px; 
 }
 
+p.dates {
+  color: gray;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.cv-output {
+  margin-bottom: 20px;
+}
+
+.cv-output p {
+  
+}
 /*
 div#profile_picture {
 	height: 100%;

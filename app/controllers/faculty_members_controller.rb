@@ -33,6 +33,7 @@ class FacultyMembersController < ApplicationController
     @publications = @faculty_member.publications
     @researches = @faculty_member.researches
     @employments = @faculty_member.employments
+    @awards = @faculty_member.awards
   end
 
   private

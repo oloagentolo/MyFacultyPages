@@ -111,4 +111,19 @@ describe FacultyMember do
       Employment.find_by_id(@employment.id).should be_nil
     end
   end
+
+  describe 'with award associations' do
+    before(:each) do
+      @award = FactoryGirl.create(:award, :faculty_member => @faculty)
+    end
+
+    it 'should have an awards attribute' do
+      @faculty.should respond_to(:awards)
+    end
+
+    it 'should destroy the associated awards upon faculty member deletion' do
+      @faculty.destroy
+      Award.find_by_id(@award.id).should be_nil
+    end
+  end
 end

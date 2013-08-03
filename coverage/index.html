@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-08-02T22:01:30-05:00">2013-08-02T22:01:30-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-08-03T00:22:40-05:00">2013-08-03T00:22:40-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.14
+         1.12
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>8</b> files in total.
-    <b>52</b> relevant lines. 
-    <span class="green"><b>52</b> lines covered</span> and
+    <b>9</b> files in total.
+    <b>56</b> relevant lines. 
+    <span class="green"><b>56</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -71,6 +71,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#d3224dcc57c351da98558747fffb2a61776d2e8e" class="src_link" title="app/models/award.rb">app/models/award.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#be1157f2907a6b16dc6cdc41762c5b7464e98ae6" class="src_link" title="app/models/course.rb">app/models/course.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>5</td>
@@ -103,9 +113,9 @@
       <tr>
         <td class="strong"><a href="#2d3f8cffbc0fee842c6f3f6eb89fce2114ad8ec2" class="src_link" title="app/models/faculty_member.rb">app/models/faculty_member.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>7</td>
-        <td>7</td>
+        <td>10</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -494,6 +504,54 @@
   </pre>
 </div>
       
+        <div class="source_table" id="d3224dcc57c351da98558747fffb2a61776d2e8e">
+  <div class="header">
+    <h3>app/models/award.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Award &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_presence_of :title, :issuer, :issue_date, :summary, :faculty_member_id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :faculty_member</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="be1157f2907a6b16dc6cdc41762c5b7464e98ae6">
   <div class="header">
     <h3>app/models/course.rb</h3>
@@ -631,8 +689,8 @@
     <h3>app/models/faculty_member.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -688,7 +746,13 @@
           <code class="ruby">  has_many :employments, :dependent =&gt; :destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :awards, :dependent =&gt; :destroy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>

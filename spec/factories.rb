@@ -53,4 +53,12 @@ FactoryGirl.define do
     e.summary        'Worked as a foo developer for the company'
     e.association    :faculty_member
   end
+
+  factory :award do |a|
+    a.title          'Best Foo Award'
+    a.issuer         'Foobar, Inc.'
+    a.issue_date     Date.today
+    a.summary        'Awarded for being best foo employee'
+    a.association    :faculty_member
+  end
 end

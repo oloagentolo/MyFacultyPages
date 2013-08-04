@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-FacultyMember.create(first_name: 'John', last_name: 'Doe', position: 'Professor',
-  department: 'Computer Science', university_id: 123456, email: 'johndoe@uastalia.edu')
+FacultyMember.create(first_name: 'John', last_name: 'Doe', position: 'Professor', password: 'foobar', phone: 1234567890,
+  password_confirmation: 'foobar', department: 'Computer Science', university_id: 123456, email: 'johndoe@uastalia.edu')
 
 Course.create(dept_code: 'COSC', course_no: 1410, name: 'Introduction to C++', term: 'Fall', year: 2013,
   summary: 'Introduction to the C++ programming language.', faculty_member_id: 1)

@@ -1,10 +1,56 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/sessions_controller.rb": [
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/faculty_members_controller.rb": [
+        null,
         1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        12,
+        null,
+        null,
+        1,
+        12,
         null,
         null
       ],
@@ -14,8 +60,68 @@
         null,
         1,
         null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/award.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/course.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/degree.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/employment.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/faculty_member.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/publication.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/tmagent17/Rails_Projects/MyFacultyPages/app/models/research.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1375637350
+    "timestamp": 1375639608
   }
 }

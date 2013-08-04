@@ -10,6 +10,8 @@ FactoryGirl.define do
     f.email          'Sample@example.com'
     f.phone          1234567890
     f.office         'PGH 123'
+    f.password       'foobar'
+    f.password_confirmation 'foobar'
   end
 
   factory :course do |c|

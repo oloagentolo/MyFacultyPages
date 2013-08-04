@@ -35,6 +35,17 @@ describe FacultyMember do
       @faculty.email = ''
       @faculty.should_not be_valid
     end
+
+    it 'should require a password' do
+      @faculty.password = ''
+      @faculty.password_confirmation = ''
+      @faculty.should_not be_valid
+    end
+
+    it 'should require a matching password confirmation' do
+      @faculty.password_confirmation = 'mismatch'
+      @faculty.should_not be_valid
+    end
   end
 
   describe 'phone number validations' do

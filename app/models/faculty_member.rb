@@ -8,4 +8,6 @@ class FacultyMember < ActiveRecord::Base
   has_many :degrees, :dependent => :destroy
   has_many :employments, :dependent => :destroy
   has_many :awards, :dependent => :destroy
+  
+  has_secure_password
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803050412) do
+ActiveRecord::Schema.define(version: 20130804174745) do
 
   create_table "awards", force: true do |t|
     t.string   "title"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20130803050412) do
     t.string   "email"
     t.integer  "phone"
     t.string   "office"
+    t.string   "password_digest"
   end
 
   create_table "publications", force: true do |t|

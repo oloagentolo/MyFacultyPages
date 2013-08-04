@@ -2,6 +2,7 @@
 class FacultyMembersController < ApplicationController
   before_action :set_faculty_member, except: [:index]
   before_action :set_faculty_view, except: [:index]
+  before_action :correct_faculty, except: [:index]
 
   def index
     @faculty_members = FacultyMember.all
@@ -47,5 +48,13 @@ class FacultyMembersController < ApplicationController
 
     def set_faculty_view
       @faculty_view = true
+    end
+
+    def correct_faculty
+      @faculty = FacultyMember.find(params[:id])
+      if signed_in? && !current_faculty?(@faculty)
+        flash[:notice] = 'Please log out before leaving page.'
+        redirect_to current_faculty
+      end
     end
 end

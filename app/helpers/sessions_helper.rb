@@ -15,6 +15,10 @@ module SessionsHelper
     @current_faculty ||= FacultyMember.find_by(remember_token: remember_token)
   end
 
+  def current_faculty?(faculty)
+    faculty == current_faculty
+  end
+
   def signed_in?
     !current_faculty.nil?
   end

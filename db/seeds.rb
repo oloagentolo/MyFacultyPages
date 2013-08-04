@@ -10,6 +10,9 @@
 FacultyMember.create(first_name: 'John', last_name: 'Doe', position: 'Professor', password: 'foobar', phone: 1234567890,
   password_confirmation: 'foobar', department: 'Computer Science', university_id: 123456, email: 'johndoe@uastalia.edu')
 
+FacultyMember.create(first_name: 'Selvin', last_name: 'Doe', position: 'Professor', password: 'foobar', phone: 2345678901,
+  password_confirmation: 'foobar', department: 'Computer Science', university_id: 234567, email: 'selvindoe@uastalia.edu')
+
 Course.create(dept_code: 'COSC', course_no: 1410, name: 'Introduction to C++', term: 'Fall', year: 2013,
   summary: 'Introduction to the C++ programming language.', faculty_member_id: 1)
 

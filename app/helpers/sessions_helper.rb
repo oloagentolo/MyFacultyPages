@@ -18,4 +18,9 @@ module SessionsHelper
   def signed_in?
     !current_faculty.nil?
   end
+
+  def sign_out
+    self.current_faculty = nil
+    cookies.delete(:remember_token)
+  end
 end

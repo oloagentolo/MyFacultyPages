@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130804174745) do
+ActiveRecord::Schema.define(version: 20130804183202) do
 
   create_table "awards", force: true do |t|
     t.string   "title"
@@ -70,7 +70,10 @@ ActiveRecord::Schema.define(version: 20130804174745) do
     t.integer  "phone"
     t.string   "office"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
+
+  add_index "faculty_members", ["remember_token"], name: "index_faculty_members_on_remember_token"
 
   create_table "publications", force: true do |t|
     t.string   "title"

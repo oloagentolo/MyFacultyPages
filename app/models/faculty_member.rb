@@ -1,4 +1,6 @@
 class FacultyMember < ActiveRecord::Base
+  before_create :create_remember_token
+
   validates_presence_of :last_name, :first_name, :position, :department, :university_id, :email
   validates_length_of :phone, :is => 10
 
@@ -10,4 +12,18 @@ class FacultyMember < ActiveRecord::Base
   has_many :awards, :dependent => :destroy
   
   has_secure_password
+
+  def FacultyMember.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def FacultyMember.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private
+  
+    def create_remember_token
+      self.remember_token = FacultyMember.encrypt(FacultyMember.new_remember_token)
+    end
 end

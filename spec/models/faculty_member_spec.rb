@@ -46,6 +46,11 @@ describe FacultyMember do
       @faculty.password_confirmation = 'mismatch'
       @faculty.should_not be_valid
     end
+
+    it 'should require a remember token' do
+       @faculty.remember_token.should_not be_blank
+    end
+
   end
 
   describe 'phone number validations' do
@@ -64,6 +69,10 @@ describe FacultyMember do
         @faculty.should be_valid
       end
     end
+  end
+
+  describe 'university assigned ID validations' do
+    pending 'should reject a faculty with same university ID'
   end
   
   describe 'course associations' do

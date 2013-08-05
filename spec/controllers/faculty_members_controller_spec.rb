@@ -197,4 +197,23 @@ describe FacultyMembersController do
       end
     end
   end
+
+  describe 'authentication of restricted CRUD pages' do
+    before(:each) do
+      @one_faculty = FactoryGirl.create(:faculty_member)
+      @wrong_faculty = FactoryGirl.create(:faculty_member, :university_id => 789098, :email => 'foo@example.net',
+        :phone => 1112223333)
+      controller.sign_in(@wrong_faculty)
+    end
+
+    it "should require matching faculty members for 'edit'" do
+      get :edit, :id => @one_faculty
+      response.should redirect_to(@wrong_faculty)
+    end
+
+    it "should require matching faculty members for 'update'" do
+      patch :update, :id => @one_faculty, :faculty_member => {}
+      response.should redirect_to(@wrong_faculty)
+    end
+  end
 end

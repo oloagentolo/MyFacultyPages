@@ -108,8 +108,9 @@ describe PublicationsController do
 			  it "should change the publication's attributes" do
 				  patch :update, :id => @publication, :publication => @attr
 				  @publication.reload
-				  @publication.title.should == @attr[:title]
-				  @publication.summary.should == @attr[:summary]
+				  @publication.publication_no.should == @attr[:publication_no]
+				  @publication.name.should == @attr[:name]
+				  @publication.term.should == @attr[:term]
 			  end
 
 			  it "should redirect to the faculty member's publications page" do
@@ -154,8 +155,8 @@ describe PublicationsController do
   	end
 
   	it "should deny access to POST 'create'" do
-  		@attr = { :title => 'Sample Foo Title', :summary => 'Sample summary foo', :year => 1996,
-        :faculty_member_id => @faculty.id }
+  		@attr = { :dept_code => 'COSC', :publication_no => 1234, :name => 'Foo', :term => 'Fall',
+				:year => 2003, :summary => 'Introduction to foo', :faculty_member_id => @faculty.id }
   		post :create, :publication => @attr
   		response.should redirect_to(signin_path)
   	end

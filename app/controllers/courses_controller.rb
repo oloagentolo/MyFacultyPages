@@ -1,24 +1,26 @@
 class CoursesController < ApplicationController
+  before_filter :authorize
 	before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def new
+    @title = 'Add course'
     @course = Course.new
   end
 
   def edit
+    @title = 'Edit course'
   end
 
   def create
     @course = Course.new(course_params)
-    @course.faculty_member_id = current_faculty.id
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to courses_faculty_member_path(current_faculty), notice: 'Course was successfully created.' }
-        format.json { render action: 'show', status: :created, location: root_path }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    @course.faculty_member_id = current_faculty.id unless current_faculty.nil?
+
+    if @course.save
+      flash[:success] = 'Course successfully created.'
+      redirect_to courses_faculty_member_path(current_faculty)
+    else
+      @title = 'Add course'
+      render action: 'new'
     end
   end
 
@@ -27,16 +29,15 @@ class CoursesController < ApplicationController
       flash[:success] = 'Course was successfully updated.'
       redirect_to courses_faculty_member_path(current_faculty)
     else
+      @title = 'Edit course'
       render action: 'edit'
     end
   end
 
   def destroy
     @course.destroy
-    respond_to do |format|
-      format.html { redirect_to courses_faculty_member_path(current_faculty) }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Course removed successfully.'
+    redirect_to courses_faculty_member_path(current_faculty)
   end
 
   private

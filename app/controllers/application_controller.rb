@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
         redirect_to signin_path
       end
     end
+
+    def correct_faculty
+      @faculty = FacultyMember.find(params[:id])
+      if signed_in? && !current_faculty?(@faculty)
+        flash[:notice] = 'Please log out before leaving page.'
+        redirect_to current_faculty
+      end
+    end
 end

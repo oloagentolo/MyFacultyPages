@@ -1,5 +1,4 @@
 class PublicationsController < ApplicationController
-  before_filter :authorize
   before_action :set_publication, only: [:show, :edit, :update, :destroy]
 
   def new

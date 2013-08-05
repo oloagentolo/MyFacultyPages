@@ -1,45 +1,43 @@
 class ResearchesController < ApplicationController
+  before_filter :authorize
   before_action :set_research, only: [:show, :edit, :update, :destroy]
 
   def new
+    @title = 'Add research'
     @research = Research.new
   end
 
   def edit
+    @title = 'Edit research'
   end
 
   def create
     @research = Research.new(research_params)
-    @research.faculty_member_id = current_faculty.id
-    respond_to do |format|
-      if @research.save
-        format.html { redirect_to researches_faculty_member_path(current_faculty), notice: 'Research was successfully created.' }
-        format.json { render action: 'show', status: :created, location: root_path }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    @research.faculty_member_id = current_faculty.id unless current_faculty.nil?
+
+    if @research.save
+      flash[:success] = 'Research successfully created.'
+      redirect_to researches_faculty_member_path(current_faculty)
+    else
+      @title = 'Add research'
+      render action: 'new' 
     end
   end
 
   def update
-    respond_to do |format|
-      if @research.update(research_params)
-        format.html { redirect_to researches_faculty_member_path(current_faculty), notice: 'Research was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @research.update(research_params)
+      flash[:success] = 'Research successfully updated.'
+      redirect_to researches_faculty_member_path(current_faculty)
+    else
+      @title = 'Edit research'
+      render action: 'edit'
     end
   end
 
   def destroy
     @research.destroy
-    respond_to do |format|
-      format.html { redirect_to researches_faculty_member_path(current_faculty) }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Research removed.'
+    redirect_to researches_faculty_member_path(current_faculty)
   end
 
   private

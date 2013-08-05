@@ -73,9 +73,9 @@ describe ResearchesController do
 				  end.should change(Research, :count).by(1)
 			  end
 
-			  it "should redirect to the faculty member's researches page" do
+			  it "should redirect to the faculty member's researchs page" do
 				  post :create, :research => @attr
-				  response.should redirect_to(researches_faculty_member_path(@faculty))
+				  response.should redirect_to(researchs_faculty_member_path(@faculty))
 			  end
 		  end
 	  end
@@ -113,9 +113,9 @@ describe ResearchesController do
 				  @research.summary.should == @attr[:summary]
 			  end
 
-			  it "should redirect to the faculty member's researches page" do
+			  it "should redirect to the faculty member's researchs page" do
 				  patch :update, :id => @research, :research => @attr
-				  response.should redirect_to(researches_faculty_member_path(@faculty))
+				  response.should redirect_to(researchs_faculty_member_path(@faculty))
 			  end
 		  end
 	  end
@@ -131,9 +131,9 @@ describe ResearchesController do
 			  end.should change(Research, :count).by(-1)
 		  end
 
-		  it "should redirect to the faculty member's researches page" do
+		  it "should redirect to the faculty member's researchs page" do
 			  delete :destroy, :id => @research
-			  response.should redirect_to(researches_faculty_member_path(@faculty))
+			  response.should redirect_to(researchs_faculty_member_path(@faculty))
 		  end
 	  end
   end

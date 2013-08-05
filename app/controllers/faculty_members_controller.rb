@@ -65,13 +65,6 @@ class FacultyMembersController < ApplicationController
       @faculty_view = true
     end
 
-    def correct_faculty
-      @faculty = FacultyMember.find(params[:id])
-      if signed_in? && !current_faculty?(@faculty)
-        flash[:notice] = 'Please log out before leaving page.'
-        redirect_to current_faculty
-      end
-    end
 
     def faculty_member_params
       params.require(:faculty_member).permit(:first_name, :last_name, :position, :department, :office, :phone,

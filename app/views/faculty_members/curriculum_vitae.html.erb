@@ -50,9 +50,14 @@
         <p class='dates'>
           <%= publication.year %>
         </p>
-        <%= publication.summary %>
+        <%= publication.summary %><br />
+        <% if signed_in? %>
+          <%= link_to 'Edit', edit_publication_path(publication) %> <%= link_to 'Remove', publication,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     <% end %>
+    <%= link_to 'Add publication', new_publication_path if signed_in? %>
   <hr>
 
   <h3>Research</h3>
@@ -67,8 +72,13 @@
             <%= Date::MONTHNAMES[research.start_date.month] %> <%= research.start_date.year %> - 
             <%= ending_date %>
           </p>
+          <% if signed_in? %>
+          <%= link_to 'Edit', edit_research_path(research) %> <%= link_to 'Remove', research,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
         </div>
     <% end %>
+    <%= link_to 'Add research', new_research_path if signed_in? %>
   <hr>
 
   <h3>Awards</h3>
@@ -82,7 +92,12 @@
         <p class='dates'>
           <%= Date::MONTHNAMES[award.issue_date.month] %> <%= award.issue_date.year %>
         </p>
-        <%= award.summary %>
+        <%= award.summary %><br />
+        <% if signed_in? %>
+          <%= link_to 'Edit', edit_award_path(award) %> <%= link_to 'Remove', award,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
   <% end %>
+  <%= link_to 'Add award', new_award_path if signed_in? %>
 </div>

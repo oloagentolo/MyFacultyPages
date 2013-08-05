@@ -104,8 +104,11 @@ p.dates {
   margin-bottom: 20px;
 }
 
-.cv-output p {
-  
+.cv-output p { 
+}
+
+input, textarea {
+  width: 120%;
 }
 /*
 div#profile_picture {

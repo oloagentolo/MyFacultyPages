@@ -1,8 +1,9 @@
 
 class FacultyMembersController < ApplicationController
-  before_action :set_faculty_member, except: [:index]
-  before_action :set_faculty_view, except: [:index]
-  before_action :correct_faculty, except: [:index]
+  before_filter :authorize, only: [ :edit, :update ]
+  before_action :set_faculty_member, except: [ :index ]
+  before_action :set_faculty_view, except: [ :index ]
+  before_action :correct_faculty, except: [ :index ]
 
   def index
     @faculty_members = FacultyMember.all
@@ -10,6 +11,20 @@ class FacultyMembersController < ApplicationController
 
   def show
     @title = "#{@faculty_member.first_name} #{@faculty_member.last_name}"
+  end
+
+  def edit
+    @title = 'Edit profile'
+  end
+
+  def update
+    if @faculty.update(faculty_member_params)
+      flash[:success] = 'Successfully updated profile.'
+      redirect_to @faculty_member
+    else
+      @title = 'Edit profile'
+      render action: 'edit'
+    end
   end
 
   def courses
@@ -56,5 +71,10 @@ class FacultyMembersController < ApplicationController
         flash[:notice] = 'Please log out before leaving page.'
         redirect_to current_faculty
       end
+    end
+
+    def faculty_member_params
+      params.require(:faculty_member).permit(:first_name, :last_name, :position, :department, :office, :phone,
+        :summary, :biography)
     end
 end

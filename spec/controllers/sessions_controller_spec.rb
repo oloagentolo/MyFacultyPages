@@ -13,6 +13,18 @@ describe SessionsController do
       get :new
       response.should have_selector('title', :content => 'Sign in')
     end
+
+    describe 'for faculty members signed in' do
+      before do
+        @faculty = FactoryGirl.create(:faculty_member)
+        controller.sign_in(@faculty)
+      end
+
+      it 'should redirect to the user page' do
+        get :new
+        response.should redirect_to(faculty_member_path(@faculty))
+      end
+    end
   end
 
   describe "POST request for 'create'" do

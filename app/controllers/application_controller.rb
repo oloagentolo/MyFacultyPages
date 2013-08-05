@@ -4,4 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include SessionsHelper
+
+  protected
+  
+    def authorize
+      unless signed_in?
+        flash[:notice] = 'You do not have permission to visit this page. Please sign in.'
+        redirect_to signin_path
+      end
+    end
 end

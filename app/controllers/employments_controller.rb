@@ -1,11 +1,14 @@
 class EmploymentsController < ApplicationController
+  before_filter :authorize
   before_action :set_employment, only: [:show, :edit, :update, :destroy]
 
   def new
+    @title = 'Add employment'
     @employment = Employment.new
   end
 
   def edit
+    @title = 'Edit employment'
   end
 
   def create
@@ -17,6 +20,7 @@ class EmploymentsController < ApplicationController
         format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Employment was successfully created.' }
         format.json { render action: 'show', status: :created, location: root_path }
       else
+        @title = 'Add employment'
         format.html { render action: 'new' }
         format.json { render json: root_path.errors, status: :unprocessable_entity }
       end
@@ -29,6 +33,7 @@ class EmploymentsController < ApplicationController
         format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Employment was successfully updated.' }
         format.json { head :no_content }
       else
+        @title = 'Edit employment'
         format.html { render action: 'edit' }
         format.json { render json: root_path.errors, status: :unprocessable_entity }
       end

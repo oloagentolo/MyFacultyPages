@@ -6,9 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+summary = 'Hello there! My name is John Doe and I am a professor of computer science here at the University of Astalia! It gives me great pleasure 
+to welcome you to the computer science department.'
+
+biography = 'I obtained my Ph.D. from the University of Houston in 2000 and have been teaching here ever since then as a professor.  My specialties lie'
 
 FacultyMember.create(first_name: 'John', last_name: 'Doe', position: 'Professor', password: 'foobar', phone: 1234567890,
-  password_confirmation: 'foobar', department: 'Computer Science', university_id: 123456, email: 'johndoe@uastalia.edu')
+  password_confirmation: 'foobar', department: 'Computer Science', university_id: 123456, email: 'johndoe@uastalia.edu',
+  summary: summary, biography: biography)
 
 FacultyMember.create(first_name: 'Selvin', last_name: 'Doe', position: 'Professor', password: 'foobar', phone: 2345678901,
   password_confirmation: 'foobar', department: 'Computer Science', university_id: 234567, email: 'selvindoe@uastalia.edu')
@@ -42,6 +47,9 @@ Publication.create(title: 'Introduction to Java Programming', year: 2000, facult
 
 Degree.create(title: 'Ph.D', field_of_study: 'Computer Science', institution: 'University of Astalia',
 	issue_date: Date.new(2003, 6, 1), faculty_member_id: 1)
+
+Award.create(title: 'Best Teaching Award', issuer: 'University of Astalia', issue_date: Date.new(2008, 2, 1),
+  summary: 'Awarded for recognition of teaching efforts here at UACS.', faculty_member_id: 1)
 
 Employment.create(company: 'Foo Company', position: 'Software Developer', start_date: Date.new(2003, 1, 2),
   end_date: Date.new(2005, 5, 2), summary: 'Worked as a software developer for the advertising department',

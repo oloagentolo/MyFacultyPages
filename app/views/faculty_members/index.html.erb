@@ -10,7 +10,9 @@
     <% @faculty_members.each do |member| %>
       <tr>
         <td class='span2'>
-          <%= image_tag('UA-logo-red.png', :class => 'img-index') %>
+          <% image_file = "#{member.first_name}#{member.last_name}.JPG" %>
+          <% image_file = File.exist?("app/assets/images/#{image_file}") ? image_file : 'UA-logo-red.png' %>
+          <%= image_tag(image_file, :class => 'img-index') %>
         </td>
         <td>
           <p>
@@ -20,7 +22,8 @@
             <%= degree.title %> <%= degree.field_of_study %>, <%= degree.institution %><br />
           <% end %>
           </p>
-            Software Development Practices, Software Engineering Principles<br />
+          <%= member.researches.pluck(:topic).to_sentence %>
+          <br />
           <%= link_to 'Website', faculty_member_path(member) %>
         </td>
         <td class='span4'>

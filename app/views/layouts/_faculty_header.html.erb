@@ -2,7 +2,8 @@
   <div class='container-fluid'>
     <div class='row-fluid'>
       <div class='span3 profile_picture'>
-        <% profile_image = image_tag('rails.png', :alt => 'myPhoto', :class => 'img-profile') %>
+        <% faculty_picture = "#{@faculty_member.first_name}#{@faculty_member.last_name}.JPG" %>
+        <% profile_image = image_tag(faculty_picture, :alt => 'myPhoto', :class => 'img-profile') %>
         <%= link_to profile_image, @faculty_member %>
       </div>
       <div class='banner'>

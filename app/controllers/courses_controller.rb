@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    flash[:success] = 'Course removed successfully.'
+    flash[:success] = 'Course removed.'
     redirect_to courses_faculty_member_path(current_faculty)
   end
 

@@ -15,37 +15,29 @@ class DegreesController < ApplicationController
     @degree = Degree.new(degree_params)
     @degree.faculty_member_id = current_faculty.id unless current_faculty.nil?
 
-    respond_to do |format|
-      if @degree.save
-        format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Degree was successfully created.' }
-        format.json { render action: 'show', status: :created, location: root_path }
-      else
-        @title = 'Add degree'
-        format.html { render action: 'new' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @degree.save
+    	flash[:success] = 'Degree successfully created.'
+      redirect_to curriculum_vitae_faculty_member_path(current_faculty)
+    else
+      @title = 'Add degree'
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @degree.update(degree_params)
-        format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Degree was successfully updated.' }
-        format.json { head :no_content }
-      else
-        @title = 'Edit degree'
-        format.html { render action: 'edit' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @degree.update(degree_params)
+    	flash[:success] = 'Degre successfully updated.'
+      redirect_to curriculum_vitae_faculty_member_path(current_faculty)
+    else
+      @title = 'Edit degree'
+      render action: 'edit'
     end
   end
 
   def destroy
     @degree.destroy
-    respond_to do |format|
-      format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty) }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Degree removed.'
+    redirect_to curriculum_vitae_faculty_member_path(current_faculty)
   end
 
   private

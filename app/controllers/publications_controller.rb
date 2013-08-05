@@ -15,37 +15,29 @@ class PublicationsController < ApplicationController
     @publication = Publication.new(publication_params)
     @publication.faculty_member_id = current_faculty.id unless current_faculty.nil?
     
-    respond_to do |format|
-      if @publication.save
-        format.html { redirect_to publications_faculty_member_path(current_faculty), notice: 'Publication was successfully created.' }
-        format.json { render action: 'show', status: :created, location: root_path }
-      else
-        @title = 'Add publication'
-        format.html { render action: 'new' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @publication.save
+      flash[:success] = 'Publication successfully created.'
+      redirect_to publications_faculty_member_path(current_faculty), notice: 'Publication was successfully created.'
+    else
+      @title = 'Add publication'
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @publication.update(publication_params)
-        format.html { redirect_to publications_faculty_member_path(current_faculty), notice: 'Publication was successfully updated.' }
-        format.json { head :no_content }
-      else
-        @title = 'Edit publication'
-        format.html { render action: 'edit' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @publication.update(publication_params)
+      flash[:success] = 'Publication updated successfully.'
+      redirect_to publications_faculty_member_path(current_faculty)
+    else
+      @title = 'Edit publication'
+      render action: 'edit'
     end
   end
 
   def destroy
     @publication.destroy
-    respond_to do |format|
-      format.html { redirect_to publications_faculty_member_path(current_faculty) }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Publication removed.'
+    redirect_to publications_faculty_member_path(current_faculty)
   end
 
   private

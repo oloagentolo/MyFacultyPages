@@ -15,37 +15,29 @@ class EmploymentsController < ApplicationController
     @employment = Employment.new(employment_params)
     @employment.faculty_member_id = current_faculty.id
 
-    respond_to do |format|
-      if @employment.save
-        format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Employment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: root_path }
-      else
-        @title = 'Add employment'
-        format.html { render action: 'new' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @employment.save
+    	flash[:success] = 'Employment successfully added.'
+      redirect_to curriculum_vitae_faculty_member_path(current_faculty)
+    else
+      @title = 'Add employment'
+      render action: 'new' 
     end
   end
 
   def update
-    respond_to do |format|
-      if @employment.update(employment_params)
-        format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Employment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        @title = 'Edit employment'
-        format.html { render action: 'edit' }
-        format.json { render json: root_path.errors, status: :unprocessable_entity }
-      end
+    if @employment.update(employment_params)
+    	flash[:success] = 'Employment successfully updated.'
+      redirect_to curriculum_vitae_faculty_member_path(current_faculty)
+    else
+      @title = 'Edit employment'
+      render action: 'edit' 
     end
   end
 
   def destroy
     @employment.destroy
-    respond_to do |format|
-      format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty) }
-      format.json { head :no_content }
-    end
+    flash[:success] = 'Employment removed.'
+    redirect_to curriculum_vitae_faculty_member_path(current_faculty)
   end
 
   private

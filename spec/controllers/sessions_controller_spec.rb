@@ -62,4 +62,22 @@ describe SessionsController do
       end
     end
   end
+
+  describe "DELETE request for 'destroy'" do
+    before(:each) do
+      @faculty = FactoryGirl.create(:faculty_member)
+      controller.sign_in(@faculty)
+    end
+
+    it 'should set the current faculty member to nil' do
+      delete :destroy, :id => @faculty
+      controller.current_faculty.should == nil
+      controller.should_not be_signed_in
+    end
+
+    it 'should redirect the user to the root page' do
+      delete :destroy, :id => @faculty
+      response.should redirect_to(root_path)
+    end
+  end
 end

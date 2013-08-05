@@ -2,9 +2,8 @@ require 'spec_helper'
 
 describe Employment do
   before(:each) do
-    @faculty = FactoryGirl.create(:faculty_member)
     @attr = { :company => 'Foo Company', :position => 'Foo Developer', :start_date => Date.new(2001, 1, 1),
-      :end_date => Date.today, :summary => 'Worked as a foo developer', :faculty_member_id => @faculty.id }
+      :end_date => Date.today, :summary => 'Worked as a foo developer', :faculty_member_id => 1 }
   end
 
   describe 'instantiation' do
@@ -36,5 +35,21 @@ describe Employment do
     it 'should create an instance given valid attributes' do
       Employment.create!(@attr)
     end
+  end
+
+  describe 'with faculty member associations' do
+  	before(:each) do
+  		@faculty = FactoryGirl.create(:faculty_member)
+  		@employment = @faculty.employments.create(@attr)
+  	end
+
+  	it 'should have a faculty member attribute' do
+  		@employment.should respond_to(:faculty_member)
+  	end
+
+  	it 'should have the right associated faculty member' do
+  		@employment.faculty_member_id.should == @faculty.id
+  		@employment.faculty_member.should == @faculty
+  	end
   end
 end

@@ -2,9 +2,8 @@ require 'spec_helper'
 
 describe Publication do
   before(:each) do
-    @faculty = FactoryGirl.create(:faculty_member)
     @attr = { :title => 'Sample Publication Title', :summary => 'This is a sample summary.',
-      :faculty_member_id => @faculty.id, :year => 2000 }
+      :faculty_member_id => 1, :year => 2000 }
   end
 
   describe 'instantiation' do
@@ -29,12 +28,13 @@ describe Publication do
     end
 
     it 'should create a new instance given valid attributes' do
-      @faculty.publications.create!(@attr)
+      Publication.create!(@attr)
     end
   end
 
   describe 'with faculty member associations' do
     before(:each) do
+    	@faculty = FactoryGirl.create(:faculty_member)
       @publication = @faculty.publications.create(@attr)
     end
 

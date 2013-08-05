@@ -2,9 +2,8 @@ require 'spec_helper'
 
 describe Research do
   before(:each) do
-    @faculty = FactoryGirl.create(:faculty_member)
     @attr = { :topic => 'Sample Research Topic', :start_date => Date.new(1997, 1, 1), :end_date => Date.today,
-      :summary => 'Sample research topic goes here.', :faculty_member_id => @faculty.id }
+      :summary => 'Sample research topic goes here.', :faculty_member_id => 1 }
   end
 
   describe 'instantiation' do
@@ -33,18 +32,21 @@ describe Research do
     end
   end
 
-  describe 'with faculty member associations' do
-    before(:each) do
-      @research = @faculty.researches.create(@attr)
-    end
+  describe 'associations' do
+  	before(:each) do
+  		@faculty = FactoryGirl.create(:faculty_member)
+  		@research = @faculty.researches.create(@attr)
+  	end
 
-    it 'should have a faculty member attribute' do
-      @research.should respond_to(:faculty_member)
-    end
+  	describe 'with faculty member' do
+  		it 'should have a faculty member attribute' do
+        @research.should respond_to(:faculty_member)
+      end
 
-    it 'should have the right associated faculty member' do
-      @research.faculty_member_id.should == @faculty.id
-      @research.faculty_member.should == @faculty
-    end
+      it 'should have the right associated faculty member' do
+        @research.faculty_member_id.should == @faculty.id
+        @research.faculty_member.should == @faculty
+      end
+  	end
   end
 end

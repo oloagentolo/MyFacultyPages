@@ -1,0 +1,35 @@
+<div class='row'>
+  <div class='span5 offset1'>
+    <h2>Update Course</h2>
+    <%= form_for(@course) do |f| %>
+  <div class="field">
+    <%= f.label :dept_code %>
+    <%= f.text_field :dept_code %>
+  </div>
+  <div class="field">
+    <%= f.label :course_no %>
+    <%= f.number_field :course_no %>
+  </div>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :term %>
+    <%= f.select :term, ['Fall', 'Spring', 'Summer'], :prompt => 'Select term' %>
+  </div>
+  <div class="field">
+    <%= f.label :year %>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %>
+    <%= f.text_area :summary %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+  </div>
+</div>

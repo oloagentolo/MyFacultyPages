@@ -10,6 +10,9 @@
     <p>
     <%= course.summary %>
     </p>
+    <%= link_to 'Edit', edit_course_path(course) if signed_in? %> 
+    <%= link_to 'Remove', course, method: :delete, data: { confirm: 'Are you sure?' } %>
     <hr>
   <% end %>
+  <%= link_to 'Add course', new_course_path %>
 </div>

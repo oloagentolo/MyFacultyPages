@@ -72,9 +72,9 @@ describe DegreesController do
 				  end.should change(Degree, :count).by(1)
 			  end
 
-			  it "should redirect to the faculty member's C.V. page" do
+			  it "should redirect to the faculty member's degrees page" do
 				  post :create, :degree => @attr
-				  response.should redirect_to(curriculum_vitae_faculty_member_path(@faculty))
+				  response.should redirect_to(degrees_faculty_member_path(@faculty))
 			  end
 		  end
 	  end
@@ -112,9 +112,9 @@ describe DegreesController do
 				  @degree.field_of_study.should == @attr[:field_of_study]
 			  end
 
-			  it "should redirect to the faculty member's C.V. page" do
+			  it "should redirect to the faculty member's degrees page" do
 				  patch :update, :id => @degree, :degree => @attr
-				  response.should redirect_to(curriculum_vitae_faculty_member_path(@faculty))
+				  response.should redirect_to(degrees_faculty_member_path(@faculty))
 			  end
 		  end
 	  end
@@ -130,9 +130,9 @@ describe DegreesController do
 			  end.should change(Degree, :count).by(-1)
 		  end
 
-		  it "should redirect to the faculty member's C.V. page" do
+		  it "should redirect to the faculty member's degrees page" do
 			  delete :destroy, :id => @degree
-			  response.should redirect_to(curriculum_vitae_faculty_member_path(@faculty))
+			  response.should redirect_to(degrees_faculty_member_path(@faculty))
 		  end
 	  end
   end

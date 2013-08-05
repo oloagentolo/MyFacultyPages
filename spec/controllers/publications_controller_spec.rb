@@ -161,8 +161,7 @@ describe PublicationsController do
   	end
 
   	it "should deny access to PATCH 'update'" do
-  		@attr = { :publication_no => 4567, :name => 'AnotherNewFoo' }
-  		patch :update, :id => @publication, :publication => @attr
+  		patch :update, :id => @publication, :publication => {}
   		response.should redirect_to(signin_path)
   	end
 

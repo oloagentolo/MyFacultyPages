@@ -1,22 +1,26 @@
 class DegreesController < ApplicationController
+  before_filter :authorize
   before_action :set_degree, only: [:show, :edit, :update, :destroy]
 
   def new
+    @title = 'Add degree'
     @degree = Degree.new
   end
 
   def edit
+    @title = 'Edit degree'
   end
 
   def create
     @degree = Degree.new(degree_params)
-    @degree.faculty_member_id = current_faculty.id
+    @degree.faculty_member_id = current_faculty.id unless current_faculty.nil?
 
     respond_to do |format|
       if @degree.save
         format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Degree was successfully created.' }
         format.json { render action: 'show', status: :created, location: root_path }
       else
+        @title = 'Add degree'
         format.html { render action: 'new' }
         format.json { render json: root_path.errors, status: :unprocessable_entity }
       end
@@ -29,6 +33,7 @@ class DegreesController < ApplicationController
         format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Degree was successfully updated.' }
         format.json { head :no_content }
       else
+        @title = 'Edit degree'
         format.html { render action: 'edit' }
         format.json { render json: root_path.errors, status: :unprocessable_entity }
       end

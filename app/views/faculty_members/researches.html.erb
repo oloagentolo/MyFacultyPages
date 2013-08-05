@@ -10,9 +10,11 @@
     </p>
     <%= research.summary %>
     <br />
-    <%= link_to 'Edit', edit_research_path(research) if signed_in? %>
+    <% if signed_in? %>
+    <%= link_to 'Edit', edit_research_path(research) %>
     <%= link_to 'Remove', research, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     <hr>
   <% end %>
-  <%= link_to 'Add research', new_research_path %>
+  <%= link_to 'Add research', new_research_path  if signed_in? %>
 </div>

@@ -18,6 +18,8 @@ MyFacultyPages::Application.routes.draw do
 
   resources :researches, :only => [ :new, :edit, :create, :update, :destroy ]
 
+  resources :publications, :only => [ :new, :edit, :create, :update, :destroy ]
+
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 

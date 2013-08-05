@@ -9,8 +9,13 @@
         <p class='dates'>
           <%= Date::MONTHNAMES[degree.issue_date.month] %> <%= degree.issue_date.year %>
         </p>
+        <% if signed_in? %>
+          <%= link_to 'Edit', edit_degree_path(degree) %> <%= link_to 'Remove', degree,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     <% end %>
+    <%= link_to 'Add degree', new_degree_path if signed_in? %>
   <hr>
 
   <h3>Employment</h3>
@@ -26,9 +31,14 @@
         <%= Date::MONTHNAMES[employment.start_date.month] %> <%= employment.start_date.year %> -
         <%= ending_date %>
         </p>
-        <%= employment.summary %>
+        <%= employment.summary %><br />
+        <% if signed_in? %>
+          <%= link_to 'Edit', edit_employment_path(employment) %> <%= link_to 'Remove', employment,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     <% end %>
+    <%= link_to 'Add employment', new_employment_path if signed_in? %>
   <hr>
 
   <h3>Publications</h3>

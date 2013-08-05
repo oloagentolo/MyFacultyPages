@@ -9,6 +9,10 @@
        <%= end_timestamp %>
     </p>
     <%= research.summary %>
+    <br />
+    <%= link_to 'Edit', edit_research_path(research) if signed_in? %>
+    <%= link_to 'Remove', research, method: :delete, data: { confirm: 'Are you sure?' } %>
     <hr>
   <% end %>
+  <%= link_to 'Add research', new_research_path %>
 </div>

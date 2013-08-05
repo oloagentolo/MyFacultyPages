@@ -110,6 +110,10 @@ p.dates {
 input, textarea {
   width: 120%;
 }
+
+select {
+  width: 100px;
+}
 /*
 div#profile_picture {
 	height: 100%;

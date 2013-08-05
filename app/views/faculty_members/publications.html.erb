@@ -17,14 +17,14 @@
         	<p><i><%= @faculty_member.first_name %> <%= @faculty_member.last_name %></i></p>
         	<p>
             <%= publication.summary %>
-            <% if signed_in? %>
-            <br/>
-            <%= link_to 'Edit', edit_publication_path(publication) %> <%= link_to 'Remove', publication, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
+            
           </p>
+          <% if signed_in? %>
+            <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_publication_path(publication), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), publication, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </table>
-  <%= link_to 'Add publication', new_publication_path if signed_in? %>
+  <%= link_to 'Add publication', new_publication_path, class: 'btn' if signed_in? %>
 </div>

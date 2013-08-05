@@ -1,13 +1,14 @@
 <div class='row'>
   <div class='span5 offset1'>
-    <h2>Update Course</h2>
+    <h2><%= @title %></h2>
     <%= form_for(@course) do |f| %>
+    <%= render '/shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :dept_code %>
+    <%= f.label :department_code %>
     <%= f.text_field :dept_code %>
   </div>
   <div class="field">
-    <%= f.label :course_no %>
+    <%= f.label :course_number %>
     <%= f.number_field :course_no %>
   </div>
   <div class="field">

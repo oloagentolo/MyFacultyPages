@@ -8,13 +8,14 @@
        <% end_timestamp = research.end_date.blank? ? 'Present' : "#{Date::MONTHNAMES[research.end_date.month]} #{research.end_date.year}" %>
        <%= end_timestamp %>
     </p>
+    <p>
     <%= research.summary %>
-    <br />
+    </p>
     <% if signed_in? %>
-    <%= link_to 'Edit', edit_research_path(research) %>
-    <%= link_to 'Remove', research, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_research_path(research), class: 'btn btn-mini btn-warning' %>
+    <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), research, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
     <% end %>
     <hr>
   <% end %>
-  <%= link_to 'Add research', new_research_path  if signed_in? %>
+  <%= link_to 'Add research', new_research_path, class: 'btn'  if signed_in? %>
 </div>

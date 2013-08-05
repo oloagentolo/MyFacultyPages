@@ -10,12 +10,12 @@
           <%= Date::MONTHNAMES[degree.issue_date.month] %> <%= degree.issue_date.year %>
         </p>
         <% if signed_in? %>
-          <%= link_to 'Edit', edit_degree_path(degree) %> <%= link_to 'Remove', degree,
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_degree_path(degree), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), degree,
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
         <% end %>
       </div>
     <% end %>
-    <%= link_to 'Add degree', new_degree_path if signed_in? %>
+    <%= link_to 'Add degree', new_degree_path, class: 'btn btn-mini' if signed_in? %>
   <hr>
 
   <h3>Employment</h3>
@@ -31,14 +31,16 @@
         <%= Date::MONTHNAMES[employment.start_date.month] %> <%= employment.start_date.year %> -
         <%= ending_date %>
         </p>
-        <%= employment.summary %><br />
+        <p>
+        <%= employment.summary %>
+        </p>
         <% if signed_in? %>
-          <%= link_to 'Edit', edit_employment_path(employment) %> <%= link_to 'Remove', employment,
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_employment_path(employment), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), employment,
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
         <% end %>
       </div>
     <% end %>
-    <%= link_to 'Add employment', new_employment_path if signed_in? %>
+    <%= link_to 'Add employment', new_employment_path, class: 'btn btn-mini' if signed_in? %>
   <hr>
 
   <h3>Publications</h3>
@@ -50,14 +52,16 @@
         <p class='dates'>
           <%= publication.year %>
         </p>
-        <%= publication.summary %><br />
+        <p>
+        <%= publication.summary %>
+        </p>
         <% if signed_in? %>
-          <%= link_to 'Edit', edit_publication_path(publication) %> <%= link_to 'Remove', publication,
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_publication_path(publication), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), publication,
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
         <% end %>
       </div>
     <% end %>
-    <%= link_to 'Add publication', new_publication_path if signed_in? %>
+    <%= link_to 'Add publication', new_publication_path, class: 'btn btn-mini' if signed_in? %>
   <hr>
 
   <h3>Research</h3>
@@ -73,12 +77,12 @@
             <%= ending_date %>
           </p>
           <% if signed_in? %>
-          <%= link_to 'Edit', edit_research_path(research) %> <%= link_to 'Remove', research,
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_research_path(research), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), research,
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
         <% end %>
         </div>
     <% end %>
-    <%= link_to 'Add research', new_research_path if signed_in? %>
+    <%= link_to 'Add research', new_research_path, class: 'btn btn-mini' if signed_in? %>
   <hr>
 
   <h3>Awards</h3>
@@ -94,10 +98,10 @@
         </p>
         <%= award.summary %><br />
         <% if signed_in? %>
-          <%= link_to 'Edit', edit_award_path(award) %> <%= link_to 'Remove', award,
-          method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_award_path(award), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), award,
+          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
         <% end %>
       </div>
   <% end %>
-  <%= link_to 'Add award', new_award_path if signed_in? %>
+  <%= link_to 'Add award', new_award_path, class: 'btn btn-mini' if signed_in? %>
 </div>

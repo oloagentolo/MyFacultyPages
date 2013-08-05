@@ -2,37 +2,7 @@
   <div class='row'>
     <div class='span6 offset1'>
       <h2>Update Profile</h2>
-      <%= form_for(@faculty_member) do |f| %>
-        <%= render '/shared/error_messages', :object => f.object %>
-
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
-
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-
-        <%= f.label :position %>
-        <%= f.text_field :position %>
-
-        <%= f.label :department %>
-        <%= f.text_field :department %>
-
-        <%= f.label :office %>
-        <%= f.text_field :office %>
-
-        <%= f.label :phone %>
-        <%= f.text_field :phone %>
-
-        <%= f.label 'Write a short introduction about yourself:' %>
-        <%= f.text_area :summary %>
-
-        <%= f.label 'Add biography:' %>
-        <%= f.text_area :biography %>
-
-        <div class='actions'>
-          <%= f.submit 'Update profile', class: 'btn btn-small' %>
-        </div>
-      <% end %>
+      <%= render 'form' %>
     </div>
   </div>
 </div>

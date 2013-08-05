@@ -18,7 +18,7 @@ class FacultyMembersController < ApplicationController
   end
 
   def update
-    if @faculty.update(faculty_member_params)
+    if @faculty_member.update(faculty_member_params)
       flash[:success] = 'Successfully updated profile.'
       redirect_to @faculty_member
     else

@@ -1,11 +1,14 @@
 class AwardsController < ApplicationController
+  before_filter :authorize
   before_action :set_award, only: [:show, :edit, :update, :destroy]
 
   def new
+    @title = 'Add award'
     @award = Award.new
   end
 
   def edit
+    @title = 'Edit award'
   end
 
   def create
@@ -17,6 +20,7 @@ class AwardsController < ApplicationController
         format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Award was successfully created.' }
         format.json { render action: 'show', status: :created, location: root_path }
       else
+        @title = 'Add award'
         format.html { render action: 'new' }
         format.json { render json: root_path.errors, status: :unprocessable_entity }
       end
@@ -29,6 +33,7 @@ class AwardsController < ApplicationController
         format.html { redirect_to curriculum_vitae_faculty_member_path(current_faculty), notice: 'Award was successfully updated.' }
         format.json { head :no_content }
       else
+        @title = 'Edit award'
         format.html { render action: 'edit' }
         format.json { render json: root_path.errors, status: :unprocessable_entity }
       end

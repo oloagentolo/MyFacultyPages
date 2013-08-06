@@ -13,7 +13,7 @@
   </div>
   <div class="field">
     <%= f.label :issue_date %><br>
-    <%= f.date_select :issue_date %>
+    <%= f.date_select :issue_date, { :start_year => Date.today.year-70, :end_year => Date.today.year } %>
   </div>
   <div class="field">
     <%= f.label :summary %><br>

@@ -17,7 +17,7 @@ class PublicationsController < ApplicationController
     
     if @publication.save
       flash[:success] = 'Publication successfully created.'
-      redirect_to publications_faculty_member_path(current_faculty), notice: 'Publication was successfully created.'
+      redirect_to publications_faculty_member_path(current_faculty)
     else
       @title = 'Add publication'
       render action: 'new'

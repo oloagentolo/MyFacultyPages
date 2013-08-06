@@ -96,7 +96,9 @@
         <p class='dates'>
           <%= Date::MONTHNAMES[award.issue_date.month] %> <%= award.issue_date.year %>
         </p>
-        <%= award.summary %><br />
+        <p>
+        <%= award.summary %>
+        </p>
         <% if signed_in? %>
           <%= link_to raw("<i class='icon-edit icon-white'></i> Edit"), edit_award_path(award), class: 'btn btn-mini btn-warning' %> <%= link_to raw("<i class='icon-bin icon-white'></i> Remove"), award,
           method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>

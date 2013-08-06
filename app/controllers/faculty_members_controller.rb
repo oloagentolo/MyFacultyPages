@@ -33,7 +33,7 @@ class FacultyMembersController < ApplicationController
 
   def researches
     @title = "Research by #{@faculty_member.first_name} #{@faculty_member.last_name}"
-    @researches = @faculty_member.researches.sort_by { |r| r.end_date.blank? ? Date.today : r.end_date }.reverse
+    @researches = @faculty_member.researches.sort_by { |r| [r.start_date, r.end_date] }.reverse
   end
 
   def publications
@@ -43,11 +43,11 @@ class FacultyMembersController < ApplicationController
 
   def curriculum_vitae
     @title = "Curriculum Vitae for #{@faculty_member.first_name} #{@faculty_member.last_name}"
-    @degrees = @faculty_member.degrees
-    @publications = @faculty_member.publications
-    @researches = @faculty_member.researches
-    @employments = @faculty_member.employments
-    @awards = @faculty_member.awards
+    @degrees = @faculty_member.degrees.sort_by { |d| d.issue_date }.reverse
+    @publications = @faculty_member.publications.sort_by { |p| p.year }.reverse
+    @researches = @faculty_member.researches.sort_by { |r| [r.start_date, r.end_date] }.reverse
+    @employments = @faculty_member.employments.sort_by { |e| [e.start_date, e.end_date] }.reverse
+    @awards = @faculty_member.awards.sort_by { |a| a.issue_date }.reverse
   end
 
   def contact_details

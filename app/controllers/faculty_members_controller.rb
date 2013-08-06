@@ -1,4 +1,3 @@
-
 class FacultyMembersController < ApplicationController
   before_filter :authorize, only: [ :edit, :update ]
   before_action :set_faculty_member, except: [ :index ]

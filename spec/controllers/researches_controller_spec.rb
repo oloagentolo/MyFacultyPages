@@ -3,9 +3,12 @@ require 'spec_helper'
 describe ResearchesController do
 	render_views
 
+	before(:each) do
+		@faculty = FactoryGirl.create(:faculty_member)
+	end
+
 	describe 'for faculty members signed in' do
   	before(:each) do
-  		@faculty = FactoryGirl.create(:faculty_member)
   		controller.sign_in(@faculty)
   	end
 
@@ -140,7 +143,6 @@ describe ResearchesController do
 
   describe 'for users not signed in' do
   	before(:each) do
-  		@faculty = FactoryGirl.create(:faculty_member)
   		@research = FactoryGirl.create(:research, :faculty_member => @faculty)
   	end
 

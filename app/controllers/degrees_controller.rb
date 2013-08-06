@@ -26,7 +26,7 @@ class DegreesController < ApplicationController
 
   def update
     if @degree.update(degree_params)
-    	flash[:success] = 'Degre successfully updated.'
+    	flash[:success] = 'Degree successfully updated.'
       redirect_to curriculum_vitae_faculty_member_path(current_faculty)
     else
       @title = 'Edit degree'
@@ -41,6 +41,7 @@ class DegreesController < ApplicationController
   end
 
   private
+
     def set_degree
       @degree = Degree.find(params[:id])
     end

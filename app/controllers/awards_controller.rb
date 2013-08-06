@@ -21,7 +21,6 @@ class AwardsController < ApplicationController
     else
       @title = 'Add award'
       render action: 'new'
-
     end
   end
 

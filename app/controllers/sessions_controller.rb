@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     faculty = FacultyMember.find_by(university_id: params[:session][:university_id])
     if faculty && faculty.authenticate(params[:session][:password])
       sign_in faculty
+      flash[:success] = 'You are now signed in.'
       redirect_to faculty
     else
       @title = 'Sign in'
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
   
   def destroy
     sign_out
+    flash[:success] = 'You have signed out.'
     redirect_to root_path
   end
 end

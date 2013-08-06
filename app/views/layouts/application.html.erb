@@ -12,26 +12,19 @@
 </head>
 <body>
   <div class='wrapper'>
-
     <% header = @faculty_view ? 'faculty_header' : 'index_header' %>
     <%= render "layouts/#{header}" %>
 
-    <div class='bar'>
-      <% logo = image_tag('UACS.png', :alt => 'UA Computer Science', :class => 'UHCS-logo') %>
-      <%= link_to logo, root_path, class: 'UHCS-path' %>
-      <% if signed_in? %>
-        <%= link_to 'Sign out', signout_path, method: 'delete', class: 'signin-path' %>
-      <% else %>
-        <%= link_to 'Sign in', signin_path, class: 'signin-path' %>
-      <% end %>
-      
-    </div>
+    <%= render 'layouts/bar' %>
+    
     <div class='container-fluid'>
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
       <% end %>
       <div class='row-fluid'>
-        <%= render 'layouts/navigation' if @faculty_member %>
+        <%= render 'layouts/navigation' if @faculty_member %>     
         <div class="<%= 'span9' if @faculty_view %>">
           <%= yield %>
         </div>

@@ -39,7 +39,7 @@ describe Course do
     end
 
     it 'should create a new instance given valid attributes' do
-    	@faculty.courses.create!(@attr)
+    	Course.create!(@attr)
     end
   end
 

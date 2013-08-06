@@ -32,6 +32,10 @@ describe Award do
       no_recipient_award = Award.new(@attr.merge(:faculty_member_id => nil))
       no_recipient_award.should_not be_valid
     end
+
+    it 'should create an instance given valid attributes' do
+    	Award.create!(@attr)
+    end
   end
 
   describe 'with a faculty member association' do

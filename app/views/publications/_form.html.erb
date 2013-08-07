@@ -14,7 +14,7 @@
   </div>
   <div class="field">
     <%= f.label :year %>
-    <%= f.number_field :year %>
+    <%= f.select :year, options_for_select(years) %>
   </div>
   <div class="field">
     <%= f.label :image_url %>

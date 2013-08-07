@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :term %>
-    <%= f.select :term, ['Fall', 'Spring', 'Summer'], :prompt => 'Select' %>
+    <%= f.select :term, options_for_select(semester)%>
   </div>
   <div class="field">
     <%= f.label :year %>
-    <%= f.number_field :year %>
+    <%= f.select :year, options_for_select(years) %>
   </div>
   <div class="field">
     <%= f.label :summary %>
